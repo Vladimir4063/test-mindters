@@ -1,0 +1,9 @@
+vladimir@gmail.com
+!ivan@gmailcom
+mateo@gmail:com
+usa@gmai!l.com
+
+john.doe@example.com
+jane_doe123@example.co.uk
+invalid-email@.com
+another.valid-email@example.io

@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<div class="container">
+    <div class=" row justify-content-center">
+        <div class="col-sm-6 mt-4">
+            <h2>User Dashboard</h2>
+            <p><b>Name: </b> {{user.name }}</p>
+            <p><b>Email: </b> {{user.email }}</p>
+            
+            <!-- <a class="btn btn-danger" href="/get_user">Get user</a> -->
+
+            <form class="row g-3" action="{{ url_for('get_user') }}" method="POST">
+                <div class="col-md-6">
+                    <input type="text" class="form-control" id="user_id" name="user_id" placeholder="Search User 'ID'" required>
+                </div>
+                <div class="col-md-4">
+                    <button type="submit" class="btn btn-link"><i class="bi bi-search"></i></button>
+                </div>
+            </form>
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            <br />
+            {% for message in messages %}
+            <div class="alert alert-warning alert-dismissible" role="alert">
+                <strong>{{ message }}</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+            
+            <div class="pt-4">
+                <a href="/logout" class="btn btn-dark">Logout</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
